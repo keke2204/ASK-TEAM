@@ -1,10 +1,10 @@
 # VeriSelf
 
-[![Backend CI](https://github.com/keke2204/VERISELF/actions/workflows/backend-check.yml/badge.svg)](https://github.com/keke2204/VERISELF/actions/workflows/backend-check.yml)
-[![Live Browser Integration](https://github.com/keke2204/VERISELF/actions/workflows/live-integration.yml/badge.svg)](https://github.com/keke2204/VERISELF/actions/workflows/live-integration.yml)
-[![GitHub stars](https://img.shields.io/github/stars/keke2204/VERISELF?style=flat)](https://github.com/keke2204/VERISELF/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/keke2204/VERISELF?style=flat)](https://github.com/keke2204/VERISELF/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/keke2204/VERISELF?style=flat)](https://github.com/keke2204/VERISELF/issues)
+[![Backend CI](https://github.com/keke2204/ASK-TEAM/actions/workflows/backend-check.yml/badge.svg)](https://github.com/keke2204/ASK-TEAM/actions/workflows/backend-check.yml)
+[![Live Browser Integration](https://github.com/keke2204/ASK-TEAM/actions/workflows/live-integration.yml/badge.svg)](https://github.com/keke2204/ASK-TEAM/actions/workflows/live-integration.yml)
+[![GitHub stars](https://img.shields.io/github/stars/keke2204/ASK-TEAM?style=flat)](https://github.com/keke2204/ASK-TEAM/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/keke2204/ASK-TEAM?style=flat)](https://github.com/keke2204/ASK-TEAM/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/keke2204/ASK-TEAM?style=flat)](https://github.com/keke2204/ASK-TEAM/issues)
 [![API version](https://img.shields.io/badge/API-1.0.0-informational)](apps/backend/requirements.txt)
 [![Stack](https://img.shields.io/badge/stack-Vanilla%20JS%20%2B%20FastAPI%20%2B%20SQLite-111111)](#technology-stack)
 
@@ -23,7 +23,7 @@ The project deliberately separates **what can be measured reproducibly** from cl
 | **Web app** | https://keke2204.github.io/VERISELF/ | Static browser application and interactive demo |
 | **API** | https://veriself.onrender.com | FastAPI backend |
 | **API health** | https://veriself.onrender.com/api/v1/health | Deployment health endpoint |
-| **Repository** | https://github.com/keke2204/VERISELF | Source, CI, deployment configuration |
+| **Repository** | https://github.com/keke2204/ASK-TEAM | Source, CI, deployment configuration |
 
 There is no separate staging application defined in the repository.
 
@@ -839,7 +839,7 @@ If this repository is intended to accept public contributions or redistribution,
 
 **ASK Team**
 
-Project repository: https://github.com/keke2204/VERISELF
+Project repository: https://github.com/keke2204/ASK-TEAM
 
 ---
 
@@ -874,3 +874,9 @@ docs/
 VeriSelf is strongest when treated as an **auditable digital-identity defense prototype**: it makes concrete image measurements, keeps the most sensitive demo processing in the browser, preserves cryptographic evidence, and clearly separates measurable signals from claims that require stronger models or human/legal review.
 
 That distinction is part of the architecture — not just documentation.
+
+---
+
+## ASK-TEAM repository note
+
+This repository contains the VeriSelf application source, backend, tests, CI workflows, deployment configuration, JavaScript/CSS/HTML, and SVG assets copied from the VeriSelf source repository. The large PNG demo images and packaged ZIP distribution were not copied through the GitHub text-file transfer and remain available in the original VeriSelf repository.
