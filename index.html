@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERISELF — Digital Identity Defense</title>
+  <meta name="description" content="VeriSelf protects digital identity media with on-device photo cloaking, biometric face-landmark scanning, and perceptual hash verification.">
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-meta">
+      <span>VERISELF</span><span class="divider">/</span>
+      <span>DIGITAL IDENTITY DEFENSE</span>
+    </div>
+    <div class="masthead-meta right">
+      <span>ON-DEVICE PROCESSING</span><span class="divider">/</span>
+      <button id="themeToggle" class="text-toggle" aria-label="Toggle theme">
+        <span class="theme-label-dark">INVERT [WHITE]</span>
+        <span class="theme-label-light">INVERT [BLACK]</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="masthead-main">
+    <div class="brand-block">
+      <a href="#" class="brand-title">VERISELF</a>
+      <span class="brand-sub">Biometric Likeness Defense & Forensic Verification</span>
+    </div>
+
+    <nav class="editorial-nav">
+      <a href="#protect"><span class="nav-idx">01</span> Protect</a>
+      <a href="#biometric"><span class="nav-idx">02</span> Biometric</a>
+      <a href="#verify"><span class="nav-idx">03</span> Verify</a><a href="#advanced"><span class="nav-idx">04</span> Evidence</a>
+      <a href="https://github.com/keke2204/VERISELF" target="_blank" rel="noopener noreferrer" class="nav-github">Repository ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero-editorial">
+    <div class="editorial-container">
+      <div class="hero-lead-row">
+        <div class="hero-left-col">
+          <span class="chapter-label">DIGITAL IDENTITY DEFENSE SYSTEM</span>
+          <h1 class="hero-headline">Protect the face.<br>Verify the media.</h1>
+          <p class="hero-dek">
+            Upload a photo, protect it locally, scan its biometric landmarks, and verify visual matches using perceptual hashes.
+          </p>
+          <div class="hero-actions">
+            <a href="#protect" class="editorial-btn" id="protectPhotoBtn">Protect a Photo ↓</a>
+            <a href="#biometric" class="editorial-link">Open Biometric Scan ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-right-col">
+          <div class="curator-card">
+            <div class="curator-header">
+              <span class="curator-tag">ACTIVE FEATURES</span>
+              <span class="curator-id">VS / 2026</span>
+            </div>
+            <div class="curator-specs">
+              <div class="spec-row">
+                <span class="spec-k">PHOTO PROTECTION</span>
+                <span class="spec-v">LOCAL CLOAKING</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-k">BIOMETRIC OPTION</span>
+                <span class="spec-v">FACE + LANDMARKS</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-k">MEDIA VERIFICATION</span>
+                <span class="spec-v">PERCEPTUAL HASH</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-k">UPLOAD PRIVACY</span>
+                <span class="spec-v">BROWSER PROCESSING</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-rule-box">
+        <div class="rule-col">
+          <span class="rule-num">01</span>
+          <p>Upload your portrait and create a locally processed protected copy.</p>
+        </div>
+        <div class="rule-col">
+          <span class="rule-num">02</span>
+          <p>Run the biometric scan to detect a face and visualize facial landmarks.</p>
+        </div>
+        <div class="rule-col">
+          <span class="rule-num">03</span>
+          <p>Compare perceptual hashes to check whether two image assets are visually related.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="protect" class="editorial-section border-top">
+    <div class="editorial-container">
+      <div class="section-meta-header">
+        <span class="section-numeral">01 / PROTECT PHOTO</span>
+        <span class="section-folio">LOCAL IMAGE PROTECTION</span>
+      </div>
+
+      <div class="specimen-intro">
+        <h2 class="editorial-subheading">Protect your photo</h2>
+        <p class="specimen-caption">
+          Choose a JPG, PNG, or WebP image. The demo processes the working copy in your browser and creates a protected comparison image.
+        </p>
+      </div>
+
+      <label class="upload-dropzone" id="uploadDropzone" for="uploadInput" tabindex="0" aria-label="Choose a photo to upload">
+        <input type="file" id="uploadInput" accept="image/png, image/jpeg, image/webp" hidden>
+        <div class="upload-dropzone-inner">
+          <span class="upload-icon">＋</span>
+          <span class="upload-label">Drop a photo here, or click to choose one</span>
+          <span class="upload-sublabel">JPG, PNG or WebP · processed on-device</span>
+        </div>
+      </label>
+
+      <div class="upload-status-row" id="uploadStatusRow" style="display:none;">
+        <span class="upload-status-text font-mono" id="uploadStatusText">Processing…</span>
+        <button type="button" class="editorial-link upload-reset-btn" id="resetSpecimenBtn">↺ Reset</button>
+      </div>
+
+      <div class="specimen-plate-container">
+        <div class="specimen-frame" id="comparisonSlider">
+          <div class="specimen-layer base-layer">
+            <img id="plateOriginalImg" src="./original.png" alt="Original photo" class="plate-image">
+            <div class="plate-annotation left-tag">
+              <span class="plate-title">ORIGINAL</span>
+              <span class="plate-status">SOURCE IMAGE</span>
+            </div>
+          </div>
+
+          <div class="specimen-layer cloaked-layer" id="cloakedWrapper">
+            <img id="plateCloakedImg" src="./cloaked.png" alt="Protected photo" class="plate-image">
+            <div class="plate-annotation right-tag">
+              <span class="plate-title">VERISELF PROTECTED</span>
+              <span class="plate-status" id="plateBStatus">SAMPLE SPECIMEN</span>
+            </div>
+          </div>
+
+          <div class="plate-divider-handle" id="sliderHandle">
+            <div class="divider-hairline"></div>
+            <div class="divider-dial"><span class="dial-arrow">‹</span><span class="dial-arrow">›</span></div>
+          </div>
+        </div>
+
+        <div class="plate-footer-meta">
+          <div class="plate-meta-item">
+            <span class="meta-label">SOURCE RESOLUTION</span>
+            <span class="meta-value font-mono" id="metaResolution">1920 × 1080 PX</span>
+          </div>
+          <div class="plate-meta-item">
+            <span class="meta-label">PROCESSING</span>
+            <span class="meta-value font-mono">LOCAL BROWSER</span>
+          </div>
+          <div class="plate-meta-item">
+            <span class="meta-label" id="metaHashLabel">SAMPLE HASH DELTA</span>
+            <span class="meta-value font-mono" id="metaHashValue">4 BITS / 64 (93.75%)</span>
+          </div>
+          <div class="plate-meta-item">
+            <span class="meta-label">NEXT STEP</span>
+            <span class="meta-value font-mono">BIOMETRIC SCAN ↓</span>
+          </div>
+        </div>
+
+        <div class="plate-download-row" id="plateDownloadRow" style="display:none;">
+          <button type="button" class="editorial-btn small-btn" id="downloadCloakedBtn">Download Protected Photo ↓</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="biometric" class="editorial-section border-top">
+    <div class="editorial-container">
+      <div class="section-meta-header">
+        <span class="section-numeral">02 / BIOMETRIC SCAN</span>
+        <span class="section-folio">FACE DETECTION & LANDMARK ANALYSIS</span>
+      </div>
+
+      <div class="specimen-intro">
+        <h2 class="editorial-subheading">Biometric option</h2>
+        <p class="specimen-caption">
+          Run a browser-based face scan on the uploaded photo. VeriSelf detects the face, measures detection confidence, draws the face box, and marks facial landmark references.
+        </p>
+        <div class="hero-actions">
+          <button type="button" class="editorial-btn" id="runBiometricBtn">Run Biometric Scan</button>
+          <span class="editorial-link">Upload a photo first</span>
+        </div>
+      </div>
+
+      <div class="biometric-scan-panel" id="biometricScanPanel" style="display:none;">
+        <div class="chassis-header">
+          <span class="chassis-id">LIVE BIOMETRIC LANDMARK SCAN</span>
+          <span class="chassis-status font-mono" id="scanEngineStatus">MODEL IDLE</span>
+        </div>
+        <div class="biometric-scan-body">
+          <canvas id="scanCanvas" class="scan-canvas"></canvas>
+          <div class="chassis-readout scan-readout">
+            <div class="readout-row">
+              <span class="readout-k">FACE DETECTED</span>
+              <span class="readout-v font-mono" id="scanFaceDetected">—</span>
+            </div>
+            <div class="readout-row">
+              <span class="readout-k">DETECTION CONFIDENCE</span>
+              <span class="readout-v font-mono" id="scanConfidence">—</span>
+            </div>
+            <div class="readout-row">
+              <span class="readout-k">LANDMARK POINTS</span>
+              <span class="readout-v font-mono" id="scanLandmarkCount">—</span>
+            </div>
+            <div class="readout-row">
+              <span class="readout-k">BOUNDING BOX</span>
+              <span class="readout-v font-mono" id="scanBoundingBox">—</span>
+            </div>
+            <div class="chassis-footer font-mono">
+              BROWSER FACE-LANDMARK MODEL • IMAGE PROCESSING STAYS IN THE BROWSER
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="verify" class="editorial-section border-top">
+    <div class="editorial-container">
+      <div class="section-meta-header">
+        <span class="section-numeral">03 / VERIFY MATCH</span>
+        <span class="section-folio">PERCEPTUAL HASH COMPARISON</span>
+      </div>
+
+      <div class="calculator-layout">
+        <div class="calculator-text-col">
+          <h2 class="editorial-subheading">Verify an image match</h2>
+          <p>
+            Compare two 64-bit perceptual hashes. The tool calculates their Hamming distance and a simple similarity percentage.
+          </p>
+          <div class="reference-box">
+            <span class="ref-title">QUICK READING</span>
+            <table class="editorial-ref-table">
+              <tr><td class="font-mono">0–8 bits</td><td>Close perceptual match</td></tr>
+              <tr><td class="font-mono">&gt; 8 bits</td><td>More visually distinct</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="calculator-instrument-col">
+          <div class="instrument-chassis">
+            <div class="chassis-header">
+              <span class="chassis-id">HASH VERIFICATION</span>
+              <span class="chassis-status font-mono">64-BIT</span>
+            </div>
+
+            <div class="chassis-inputs">
+              <div class="field-wrap">
+                <label for="hashInput1" class="field-label">HASH A</div>
+                <div class="field-control">
+                  <input type="text" id="hashInput1" class="chassis-input font-mono" value="e38a29b4c0f1d5e6" maxlength="16" spellcheck="false">
+                  <button type="button" class="field-action-btn" onclick="document.getElementById('hashInput1').value='e38a29b4c0f1d5e6'; calculateHamming();">RESET</button>
+                </div>
+              </div>
+
+              <div class="field-wrap">
+                <label for="hashInput2" class="field-label">HASH B</label>
+                <div class="field-control">
+                  <input type="text" id="hashInput2" class="chassis-input font-mono" value="e38a29b4c0f1d5a1" maxlength="16" spellcheck="false">
+                  <button type="button" class="field-action-btn" onclick="document.getElementById('hashInput2').value='e38a29b4c0f1d5a1'; calculateHamming();">PRESET</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="chassis-readout" id="calcResultsBox">
+              <div class="readout-row">
+                <span class="readout-k">HAMMING DISTANCE</span>
+                <span class="readout-v font-mono" id="resDistance">4 BITS / 64</span>
+              </div>
+              <div class="readout-row">
+                <span class="readout-k">SIMILARITY</span>
+                <span class="readout-v font-mono text-bold" id="resSimilarity">93.75%</span>
+              </div>
+              <div class="readout-row verdict-row">
+                <span class="readout-k">RESULT</span>
+                <span class="verdict-tag font-mono" id="resVerdict">CLOSE PERCEPTUAL MATCH (≤ 8 BITS)</span>
+              </div>
+            </div>
+
+            <div class="chassis-footer font-mono">COMPUTED LOCALLY IN JAVASCRIPT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="advanced" class="editorial-section border-top">
+    <div class="editorial-container">
+      <div class="section-meta-header"><span class="section-numeral">04 / FORENSICS + EVIDENCE</span><span class="section-folio">PROJECT FEATURES</span></div>
+      <div class="analysis-grid">
+        <div class="instrument-chassis">
+          <div class="chassis-header"><span>FORENSIC IMAGE CHECK</span><span class="font-mono" id="advRiskLevel">READY</span></div>
+          <p class="specimen-caption">Measure edge variance, colour-channel drift, and texture signal from the uploaded image. These are forensic indicators, not a definitive deepfake verdict.</p>
+          <div class="risk-meter"><div id="advRiskBar" class="risk-bar"></div></div>
+          <div class="risk-score" id="advRiskScore">—</div>
+          <div class="chassis-readout">
+            <div class="readout-row"><span class="readout-k">LAPLACIAN VARIANCE</span><span class="readout-v font-mono" id="advLaplacian">—</span></div>
+            <div class="readout-row"><span class="readout-k">CHANNEL DRIFT</span><span class="readout-v font-mono" id="advDrift">—</span></div>
+            <div class="readout-row"><span class="readout-k">TEXTURE SIGNAL</span><span class="readout-v font-mono" id="advTexture">—</span></div>
+          </div>
+          <button class="editorial-btn small-btn" id="advForensicBtn">Run Forensic Check</button>
+        </div>
+        <div class="instrument-chassis">
+          <div class="chassis-header"><span>SECOND-IMAGE VERIFICATION</span><span class="font-mono">PERCEPTUAL HASH</span></div>
+          <div class="upload-dropzone compact-drop" id="candidateDropzone" role="button" tabindex="0" aria-label="Choose a candidate image"><input type="file" id="candidateInput" accept="image/png,image/jpeg,image/webp" hidden><div class="upload-dropzone-inner"><span class="upload-icon">＋</span><span class="upload-label">Choose a candidate image</span><span class="upload-sublabel">Compare it with the uploaded source</span></div>
+          <div class="hash-stack" id="candidateResult" style="display:none">
+            <div><span>SOURCE pHASH</span><code id="advSourceHash">—</code></div>
+            <div><span>CANDIDATE pHASH</span><code id="advCandidateHash">—</code></div>
+            <div class="readout-row"><span class="readout-k">HAMMING DISTANCE</span><span class="readout-v font-mono" id="advDistance">—</span></div>
+            <div class="readout-row"><span class="readout-k">SIMILARITY</span><span class="readout-v font-mono" id="advSimilarity">—</span></div>
+            <div class="readout-row"><span class="readout-k">RESULT</span><span class="verdict-tag font-mono" id="advVerdict">—</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="instrument-chassis backend-panel">
+        <div class="chassis-header"><span>BACKEND CONNECTION</span><span class="font-mono" id="apiStatus">NOT CONFIGURED</span></div>
+        <p class="specimen-caption">Live FastAPI connection. Source registration and candidate comparison use the deployed backend.</p>
+        <div class="field-control">
+          <input type="url" id="apiBaseUrl" class="chassis-input" placeholder="https://veriself.onrender.com">
+          <button type="button" class="field-action-btn" id="saveApiBtn">SAVE</button>
+          <button type="button" class="field-action-btn" id="testApiBtn">TEST</button>
+        </div>
+        <div class="readout-row"><span class="readout-k">BACKEND MEDIA ID</span><span class="readout-v font-mono" id="apiMediaId">—</span></div>
+        <button type="button" class="editorial-btn small-btn" id="syncSourceBtn">Register Source in Backend</button>
+        <button type="button" class="editorial-btn small-btn" id="syncCandidateBtn">Compare Candidate via Backend</button>
+        <div class="demo-note">The backend stores image metadata and hashes. It does not perform identity recognition or automatically send legal complaints.</div>
+      </div>
+      <div class="evidence-grid">
+        <div class="instrument-chassis">
+          <div class="chassis-header"><span>EVIDENCE PACKAGE</span><span class="font-mono">SHA-256</span></div>
+          <div class="readout-row"><span class="readout-k">FILE</span><span class="readout-v font-mono" id="advEvidenceFile">—</span></div>
+          <div class="readout-row"><span class="readout-k">SHA-256</span><span class="readout-v font-mono evidence-hash" id="advSha">—</span></div>
+          <div class="readout-row"><span class="readout-k">pHASH</span><span class="readout-v font-mono" id="advEvidencePhash">—</span></div>
+          <button class="editorial-btn small-btn" id="advEvidenceBtn">Generate Case JSON</button>
+          <button class="editorial-btn small-btn" id="advDownloadBtn" style="display:none">Download Evidence</button>
+        </div>
+        <div class="instrument-chassis">
+          <div class="chassis-header"><span>RESPONSE WORKFLOW</span><span class="font-mono">DRAFT ONLY</span></div>
+          <label class="field-label" for="advTargetUrl">SUSPECTED URL</label><input id="advTargetUrl" class="chassis-input full-input" placeholder="https://example.com/image.jpg">
+          <label class="field-label" for="advOwner">IDENTITY OWNER</label><input id="advOwner" class="chassis-input full-input" placeholder="Owner / project name">
+          <button class="editorial-btn small-btn" id="advNoticeBtn">Prepare Response Draft</button>
+          <textarea id="advNotice" class="notice-output" readonly placeholder="Evidence-based response draft will appear here…"></textarea>
+          <div class="demo-note"><strong>IMPORTANT:</strong> This prepares a draft for human review. It does not automatically send a legal complaint or contact a website.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="editorial-footer border-top">
+  <div class="editorial-container footer-content">
+    <div class="footer-left">
+      <span class="footer-brand font-serif">VERISELF</span>
+      <p class="footer-meta-p">Digital identity protection, biometric landmark analysis, and media verification.</p>
+      <p class="footer-team">Developed by <strong>ASK Team</strong></p>
+    </div>
+    <div class="footer-right">
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">TOOLS</span>
+        <a href="#protect">01 / Protect</a>
+        <a href="#biometric">02 / Biometric</a>
+        <a href="#verify">03 / Verify</a>
+      </div>
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">SOURCE</span>
+        <a href="https://github.com/keke2204/VERISELF" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script src="./script.js?v=20260927-2"></script>
+<script src="./backend-bridge.js?v=20260926-2"></script>
+</body>
+</html>
